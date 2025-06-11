@@ -1,4 +1,0 @@
-repository "Unity school project@Darkkillsyou@cloud"
-  path "/"
-    br "/main"
-    co "/main"
