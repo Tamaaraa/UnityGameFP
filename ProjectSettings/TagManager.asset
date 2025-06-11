@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Monster
+  - Obstacles
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 568308233
+    locked: 0
+  - name: Skeleton
+    uniqueID: 1741740375
+    locked: 0
+  - name: Enemies
+    uniqueID: 417369377
+    locked: 0
+  - name: Weapons
+    uniqueID: 2269431803
+    locked: 0
+  - name: Player
+    uniqueID: 1974623187
+    locked: 0
+  - name: Assets
+    uniqueID: 324984415
+    locked: 0

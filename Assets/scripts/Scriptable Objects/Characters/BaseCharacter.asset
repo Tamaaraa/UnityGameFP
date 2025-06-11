@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d92b6661ea75b40acb23ed05af97e5, type: 3}
+  m_Name: BaseCharacter
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 8460946412939240537, guid: f1d4a01c065216949a7a9b4abd9174db, type: 3}
+  maxHealth: 100
+  recovery: 1
+  speed: 4
+  damageMulti: 1
+  pickupRange: 1
