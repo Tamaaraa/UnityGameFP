@@ -207,10 +207,10 @@ MonoBehaviour:
     dropRate: 100
   - name: Uncommon gem
     dropPrefab: {fileID: 2291064617763750111, guid: b0ab21379fae0f64c9a4e348d8ed9465, type: 3}
-    dropRate: 50
+    dropRate: 40
   - name: Rare gem
     dropPrefab: {fileID: 3190769974092028932, guid: d90b8f006e5c6b445b8290e00b784db7, type: 3}
-    dropRate: 25
+    dropRate: 20
 --- !u!50 &3038902610534953015
 Rigidbody2D:
   serializedVersion: 4

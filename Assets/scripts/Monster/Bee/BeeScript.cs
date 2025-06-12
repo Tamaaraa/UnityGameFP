@@ -9,6 +9,4 @@ public class BeeScript : MonsterBase
     {
         base.Update();
     }
-
-    protected override void Attack() { }
 }

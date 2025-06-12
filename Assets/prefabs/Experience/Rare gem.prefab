@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f035c591eab7541a1456b3f52e78cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceCount: 500
   pickupSound: {fileID: 8300000, guid: dc704dc496d0afe4384b29ac857da80a, type: 3}
+  experienceCount: 40
 --- !u!82 &8310695822002090699
 AudioSource:
   m_ObjectHideFlags: 0

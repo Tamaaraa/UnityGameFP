@@ -20,12 +20,14 @@ public class MonsterBase : MonoBehaviour
 
     // How long monsters will try to detour around obstacles
     private float detourDuration = 0.5f;
+    private PlayerStats playerStats;
 
     protected virtual void Start()
     {
         monster = GetComponent<MonsterStats>();
         animator = GetComponent<Animator>();
         player = FindObjectOfType<Player>().transform;
+        playerStats = FindObjectOfType<PlayerStats>();
         timer = monster.currentAttackSpeed;
         // Get boxcollider size and scale it up slightly to avoid getting stuck on obstacles
         boxCollider = GetComponent<BoxCollider2D>();
@@ -77,6 +79,10 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Attack()
     {
         timer = monster.currentAttackSpeed;
+        if (Vector2.Distance(transform.position, player.position) <= 1.5f)
+        {
+            playerStats.TakeDamage(monster.currentDamage);
+        }
     }
 
     bool IsPathClear(Vector2 direction)

@@ -19,9 +19,6 @@ public class PlayerStats : MonoBehaviour
     public float currentSpeed;
 
     [HideInInspector]
-    public float currentDamageMulti;
-
-    [HideInInspector]
     public float currentPickUpRange;
 
     public List<GameObject> weapons;
@@ -35,7 +32,6 @@ public class PlayerStats : MonoBehaviour
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentSpeed = characterData.Speed;
-        currentDamageMulti = characterData.DamageMulti;
         currentPickUpRange = characterData.PickupRange;
 
         AddWeapon(characterData.Weapon);
@@ -60,16 +56,29 @@ public class PlayerStats : MonoBehaviour
     {
         while (experience >= experienceGoal)
         {
-            experienceGoal += 100 * (float)Math.Pow(1.5f, level / 7);
+            int excessExp = experience - (int)experienceGoal;
+            experienceGoal = 100 * (float)Math.Pow(1.5f, level / 7);
+            experience = 0 + excessExp;
+            float hpDifference = currentMaxHealth * 1.2f - currentMaxHealth;
+            currentHealth += hpDifference;
             currentMaxHealth *= 1.2f;
             currentRecovery *= 1.1f;
-            currentSpeed += 0.1f;
-            currentDamageMulti *= 1.1f;
             level += 1;
+
+            LevelUpUI levelUpUI = FindObjectOfType<LevelUpUI>();
+
+            UpgradeOption[] options = new UpgradeOption[]
+            {
+                new("gain 500 exp", () => IncreaseExperience(500)),
+                new("Ten-fold recovery", () => currentRecovery *= 10),
+                new("Increase Health", () => currentMaxHealth *= 1.5f)
+            };
+
+            levelUpUI.ShowLevelUpScreen(options);
         }
     }
 
-    internal void TakeDamage(int damage)
+    internal void TakeDamage(float damage)
     {
         currentHealth -= damage;
     }

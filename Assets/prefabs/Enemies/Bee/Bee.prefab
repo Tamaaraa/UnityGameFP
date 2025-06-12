@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343087274514346301}
-  - component: {fileID: 4104285005547239288}
-  - component: {fileID: 1936858602967326555}
   - component: {fileID: 2353700961736197335}
   - component: {fileID: -7018652836440813254}
+  - component: {fileID: 4104285005547239288}
+  - component: {fileID: 1936858602967326555}
   - component: {fileID: -3497787369965092898}
   - component: {fileID: 1643018927455059249}
   - component: {fileID: -1673374210143176707}
@@ -38,6 +38,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2353700961736197335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651202024641180283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ef54a708a2846428b01a9153f6aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 128
+  detectionDistance: 10
+--- !u!114 &-7018652836440813254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651202024641180283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4414ea1dfbb311740b0454bc59c09c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: 584a3293270cd5d41ad7a7dd4f36ff3e, type: 2}
+  currentSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  currentAttackSpeed: 0
 --- !u!212 &4104285005547239288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,39 +144,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2353700961736197335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4651202024641180283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ef54a708a2846428b01a9153f6aa98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 128
-  detectionDistance: 10
---- !u!114 &-7018652836440813254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4651202024641180283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4414ea1dfbb311740b0454bc59c09c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: 584a3293270cd5d41ad7a7dd4f36ff3e, type: 2}
-  currentSpeed: 0
-  currentHealth: 0
-  currentDamage: 0
-  currentAttackSpeed: 0
 --- !u!61 &-3497787369965092898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,10 +207,10 @@ MonoBehaviour:
     dropRate: 100
   - name: Uncommon gem
     dropPrefab: {fileID: 2291064617763750111, guid: b0ab21379fae0f64c9a4e348d8ed9465, type: 3}
-    dropRate: 50
+    dropRate: 25
   - name: Rare gem
     dropPrefab: {fileID: 3190769974092028932, guid: d90b8f006e5c6b445b8290e00b784db7, type: 3}
-    dropRate: 25
+    dropRate: 10
 --- !u!50 &-1673374210143176707
 Rigidbody2D:
   serializedVersion: 4
