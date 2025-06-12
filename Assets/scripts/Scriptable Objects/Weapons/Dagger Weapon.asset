@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dagger Weapon
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 6705665472712691918, guid: 6d22b5eb1be76a442bad80215c69408e, type: 3}
-  damage: 6
-  speed: 20
+  damage: 12
+  speed: 15
   attackRate: 1
-  pierce: 4
+  pierce: 3

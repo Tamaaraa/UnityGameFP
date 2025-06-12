@@ -1236,32 +1236,45 @@ MonoBehaviour:
     monsterGroups:
     - monsterName: Bee
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 10
+      totalMonsterSpawnCount: 40
       monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 3
+    spawnInterval: 1
     currentWaveSpawnCount: 0
   - Name: Axolotl
     monsterGroups:
     - monsterName: Axolotl
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 10
+      totalMonsterSpawnCount: 25
       monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 3
+    spawnInterval: 1.5
     currentWaveSpawnCount: 0
   - Name: Mixed wave
     monsterGroups:
     - monsterName: Axolotl
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 7
+      totalMonsterSpawnCount: 20
       monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
     - monsterName: Bee
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 7
+      totalMonsterSpawnCount: 30
       monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 3
+    spawnInterval: 1.5
+    currentWaveSpawnCount: 0
+  - Name: Crazy Wave
+    monsterGroups:
+    - monsterName: Axolotl
+      currentMonsterCount: 0
+      totalMonsterSpawnCount: 300
+      monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
+    - monsterName: Bee
+      currentMonsterCount: 0
+      totalMonsterSpawnCount: 500
+      monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
+    totalWaveMonsterCount: 0
+    spawnInterval: 0.1
     currentWaveSpawnCount: 0
   currentWave: 0
   spawnTimer: 3
@@ -1536,6 +1549,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073469948}
   m_CullTransparentMesh: 1
+--- !u!1 &1165243997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165243999}
+  - component: {fileID: 1165243998}
+  m_Layer: 0
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165243998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165243997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e6e7cb455444f43ae53f0290e33b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifePrefab: {fileID: 6705665472712691918, guid: 6d22b5eb1be76a442bad80215c69408e, type: 3}
+  forceFieldPrefab: {fileID: 5072394408158966123, guid: 5cecf7ae3b2029f4eabc7b28f93c2f5e, type: 3}
+  spikePrefab: {fileID: 6475624602731171571, guid: 83e5717db47811345b32d0a46688c74b, type: 3}
+--- !u!4 &1165243999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165243997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 897.22656, y: 609.45447, z: -6.687943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304136948
 GameObject:
   m_ObjectHideFlags: 0
@@ -10545,3 +10605,4 @@ SceneRoots:
   - {fileID: 409237512491341487}
   - {fileID: 780446104}
   - {fileID: 2075535184}
+  - {fileID: 1165243999}

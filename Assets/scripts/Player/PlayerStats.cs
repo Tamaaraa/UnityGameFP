@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float currentPickUpRange;
 
+    private WeaponLibrary weaponLibrary;
     public List<GameObject> weapons;
 
     void Awake()
@@ -33,6 +34,7 @@ public class PlayerStats : MonoBehaviour
         currentRecovery = characterData.Recovery;
         currentSpeed = characterData.Speed;
         currentPickUpRange = characterData.PickupRange;
+        weaponLibrary = FindObjectOfType<WeaponLibrary>();
 
         AddWeapon(characterData.Weapon);
     }
@@ -71,7 +73,7 @@ public class PlayerStats : MonoBehaviour
             {
                 new("gain 500 exp", () => IncreaseExperience(500)),
                 new("Ten-fold recovery", () => currentRecovery *= 10),
-                new("Increase Health", () => currentMaxHealth *= 1.5f)
+                new("Add forcefield weapon", () => AddWeapon(weaponLibrary.forceFieldPrefab))
             };
 
             levelUpUI.ShowLevelUpScreen(options);

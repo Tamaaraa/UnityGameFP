@@ -5,7 +5,6 @@ public class CharacterSelection : MonoBehaviour
     public static CharacterSelection instance;
     public PlayerScriptableObject characterData;
 
-    // Start is called before the first frame update
     void Awake()
     {
         if (instance == null)
