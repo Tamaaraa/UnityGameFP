@@ -7,6 +7,6 @@ public class UpgradeOption
     public UpgradeOption(string title, System.Action apply)
     {
         this.title = title;
-        this.Apply = apply;
+        Apply = apply;
     }
 }

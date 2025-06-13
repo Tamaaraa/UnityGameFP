@@ -8,7 +8,7 @@ public class WeaponScriptableObject : ScriptableObject
     public GameObject WeaponPrefab
     {
         get => weaponPrefab;
-        private set => weaponPrefab = value;
+        set => weaponPrefab = value;
     }
 
     [SerializeField]
@@ -16,7 +16,7 @@ public class WeaponScriptableObject : ScriptableObject
     public float Damage
     {
         get => damage;
-        private set => damage = value;
+        set => damage = value;
     }
 
     [SerializeField]
@@ -24,7 +24,7 @@ public class WeaponScriptableObject : ScriptableObject
     public float Speed
     {
         get => speed;
-        private set => speed = value;
+        set => speed = value;
     }
 
     [SerializeField]
@@ -32,7 +32,7 @@ public class WeaponScriptableObject : ScriptableObject
     public float AttackRate
     {
         get => attackRate;
-        private set => attackRate = value;
+        set => attackRate = value;
     }
 
     [SerializeField]
@@ -40,6 +40,6 @@ public class WeaponScriptableObject : ScriptableObject
     public float Pierce
     {
         get => pierce;
-        private set => pierce = value;
+        set => pierce = value;
     }
 }

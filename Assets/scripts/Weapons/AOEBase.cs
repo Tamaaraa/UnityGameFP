@@ -10,25 +10,14 @@ public class AOEBase : MonoBehaviour
 
     private Dictionary<MonsterStats, float> damageTimers = new();
 
-    protected Player player;
-
-    void Awake()
+    protected virtual void Start()
     {
         currentDamage = weaponData.Damage;
         currentAttackRate = weaponData.AttackRate;
     }
 
-    protected virtual void Start()
-    {
-        player = FindObjectOfType<Player>();
-
-        transform.position = player.transform.position;
-    }
-
     private void Update()
     {
-        transform.position = player.transform.position;
-
         var enemies = new List<MonsterStats>(damageTimers.Keys);
         foreach (var enemy in enemies)
         {
@@ -41,6 +30,7 @@ public class AOEBase : MonoBehaviour
             damageTimers[enemy] -= Time.deltaTime;
             if (damageTimers[enemy] <= 0f)
             {
+                Debug.Log($"Hit {enemy.name}");
                 enemy.TakeDamage(currentDamage);
                 damageTimers[enemy] = currentAttackRate;
             }

@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class SpikeScript : WeaponBase
 {
+    void Awake()
+    {
+        weaponData = Instantiate(weaponData);
+    }
+
     protected override void Start()
     {
         base.Start();

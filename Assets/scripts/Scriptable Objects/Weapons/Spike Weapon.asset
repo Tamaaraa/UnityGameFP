@@ -16,4 +16,4 @@ MonoBehaviour:
   damage: 6
   speed: 10
   attackRate: 1.5
-  pierce: 2
+  pierce: 1

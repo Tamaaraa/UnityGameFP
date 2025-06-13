@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class KnifeScript : WeaponBase
 {
+    void Awake()
+    {
+        weaponData = Instantiate(weaponData);
+    }
+
     protected override void Start()
     {
         base.Start();

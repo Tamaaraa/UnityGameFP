@@ -20,23 +20,24 @@ public class PlayerStats : MonoBehaviour
 
     [HideInInspector]
     public float currentPickUpRange;
-
-    private WeaponLibrary weaponLibrary;
     public List<GameObject> weapons;
+    private readonly HashSet<string> unlockedWeapons = new();
+    private UpgradeLibrary upgradeLibrary;
 
     void Awake()
     {
         characterData = CharacterSelection.GetData();
         CharacterSelection.instance.DestroyInstance();
+        upgradeLibrary = FindObjectOfType<UpgradeLibrary>();
 
         currentMaxHealth = characterData.MaxHealth;
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentSpeed = characterData.Speed;
         currentPickUpRange = characterData.PickupRange;
-        weaponLibrary = FindObjectOfType<WeaponLibrary>();
 
         AddWeapon(characterData.Weapon);
+        unlockedWeapons.Add(characterData.Weapon.name);
     }
 
     void Update()
@@ -61,22 +62,13 @@ public class PlayerStats : MonoBehaviour
             int excessExp = experience - (int)experienceGoal;
             experienceGoal = 100 * (float)Math.Pow(1.5f, level / 7);
             experience = 0 + excessExp;
-            float hpDifference = currentMaxHealth * 1.2f - currentMaxHealth;
-            currentHealth += hpDifference;
-            currentMaxHealth *= 1.2f;
-            currentRecovery *= 1.1f;
             level += 1;
 
             LevelUpUI levelUpUI = FindObjectOfType<LevelUpUI>();
 
-            UpgradeOption[] options = new UpgradeOption[]
-            {
-                new("gain 500 exp", () => IncreaseExperience(500)),
-                new("Ten-fold recovery", () => currentRecovery *= 10),
-                new("Add forcefield weapon", () => AddWeapon(weaponLibrary.forceFieldPrefab))
-            };
+            var options = upgradeLibrary.GetRandomUpgrades();
 
-            levelUpUI.ShowLevelUpScreen(options);
+            levelUpUI.ShowLevelUpScreen(options.ToArray());
         }
     }
 
@@ -101,6 +93,14 @@ public class PlayerStats : MonoBehaviour
     {
         GameObject newWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
         newWeapon.transform.SetParent(transform);
+        newWeapon.name = newWeapon.name.Replace("(Clone)", "").Trim();
+
         weapons.Add(newWeapon);
+
+        upgradeLibrary.RemoveWeaponUnlockUpgrade(newWeapon.name);
+        upgradeLibrary.AddWeaponUpgrades(newWeapon.name);
+
+        foreach (var wep in weapons)
+            Debug.Log(wep.name);
     }
 }

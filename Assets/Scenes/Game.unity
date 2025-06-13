@@ -1236,49 +1236,49 @@ MonoBehaviour:
     monsterGroups:
     - monsterName: Bee
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 40
+      totalMonsterSpawnCount: 80
       monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     currentWaveSpawnCount: 0
   - Name: Axolotl
     monsterGroups:
     - monsterName: Axolotl
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 25
+      totalMonsterSpawnCount: 50
       monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 1.5
+    spawnInterval: 0.9
     currentWaveSpawnCount: 0
   - Name: Mixed wave
     monsterGroups:
     - monsterName: Axolotl
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 20
+      totalMonsterSpawnCount: 40
       monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
     - monsterName: Bee
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 30
+      totalMonsterSpawnCount: 40
       monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 1.5
+    spawnInterval: 0.8
     currentWaveSpawnCount: 0
   - Name: Crazy Wave
     monsterGroups:
     - monsterName: Axolotl
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 300
+      totalMonsterSpawnCount: 80
       monsterPrefab: {fileID: 1873497752265600657, guid: d52fadecefd86764da56a4e14e58c0ca, type: 3}
     - monsterName: Bee
       currentMonsterCount: 0
-      totalMonsterSpawnCount: 500
+      totalMonsterSpawnCount: 80
       monsterPrefab: {fileID: 4651202024641180283, guid: e34f392dd3b835f4e8bceb72cfc2ac84, type: 3}
     totalWaveMonsterCount: 0
-    spawnInterval: 0.1
+    spawnInterval: 0.3
     currentWaveSpawnCount: 0
   currentWave: 0
   spawnTimer: 3
-  waveTimer: 45
+  waveTimer: 40
 --- !u!4 &972627163
 Transform:
   m_ObjectHideFlags: 0
@@ -1559,8 +1559,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1165243999}
   - component: {fileID: 1165243998}
+  - component: {fileID: 1165244000}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: Libraries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,9 +1579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e6e7cb455444f43ae53f0290e33b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knifePrefab: {fileID: 6705665472712691918, guid: 6d22b5eb1be76a442bad80215c69408e, type: 3}
+  knifePrefab: {fileID: 8460946412939240537, guid: f1d4a01c065216949a7a9b4abd9174db, type: 3}
   forceFieldPrefab: {fileID: 5072394408158966123, guid: 5cecf7ae3b2029f4eabc7b28f93c2f5e, type: 3}
-  spikePrefab: {fileID: 6475624602731171571, guid: 83e5717db47811345b32d0a46688c74b, type: 3}
+  spikePrefab: {fileID: 4227689760167592353, guid: e191bf8fe07952140bcbd57646bf5e2a, type: 3}
 --- !u!4 &1165243999
 Transform:
   m_ObjectHideFlags: 0
@@ -1596,6 +1597,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1165244000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165243997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffff9ae0d33f4a24bb1e5d044478e48e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeOptions: []
 --- !u!1 &1304136948
 GameObject:
   m_ObjectHideFlags: 0
